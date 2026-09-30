@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found - Miskat Shorthand</title>
+<meta name="robots" content="noindex">
+<script>
+  // Path di luar /msk/ (mis. /index.html, /dict.html) -> arahkan ke situs utama.
+  // Path di bawah /msk/ yang tidak ada TIDAK diarahkan (mencegah loop).
+  (function () {
+    var p = location.pathname;
+    if (p.toLowerCase().indexOf("/msk/") !== 0 && p.toLowerCase() !== "/msk") {
+      location.replace("/msk/index.html");
+    }
+  })();
+</script>
+</head>
+<body>
+<h1>Page not found</h1>
+<p><a href="/msk/index.html">Go to Miskat Shorthand</a></p>
+</body>
+</html>
